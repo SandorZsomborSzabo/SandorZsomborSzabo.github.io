@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+    </div>
+
+    <h1>Welcome to My Portfolio</h1>
+    <p>This is my Flask-powered portfolio website!</p>
+
+    <!-- Animated Text Section -->
+    <div class="content">
+      <div class="content__container">
+        <p class="content__container__text">Hello,</p>
+        <ul class="content__container__list">
+          <li class="content__container__list__item">world!</li>
+          <li class="content__container__list__item">friend!</li>
+        </ul>
+      </div>
+    </div>
+</body>
+</html>
