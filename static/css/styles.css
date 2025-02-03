@@ -14,167 +14,162 @@ h1 {
 
 /* Navbar */
 .topnav {
-  background-color: #333;
-  overflow: hidden;
+    background-color: #333;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px; /* Adds padding to navbar */
 }
 
 /* Navbar Links */
 .topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 17px;
+    margin: 0 10px; /* Adds spacing instead of padding */
+    display: inline-block; /* Ensures hover only applies to text */
 }
 
 /* Navbar Hover Effect */
 .topnav a:hover {
-  background-color: #ddd;
-  color: black;
+    background-color: transparent; /* Remove background highlight */
+    color: #04AA6D; /* Change text color on hover */
 }
 
 /* Active Navbar Link */
 .topnav a.active {
-  background-color: #04AA6D;
-  color: white;
+    background-color: transparent;
+    color: #04AA6D;
+}
+
+/* Social Icons */
+.social-icons {
+    margin-left: auto; /* Pushes icons to the right */
+    display: flex;
+    align-items: center;
+}
+
+.social-icons a {
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 15px; /* Space between icons */
+}
+
+/* Social Icons Hover Effect */
+.social-icons a:hover {
+    background-color: transparent; /* Remove background highlight */
+    color: #04AA6D; /* Change icon color on hover */
 }
 
 /* ANIMATED TEXT SECTION */
 .content {
-  position: absolute;
-  /* Move it slightly up so there's room for .intro below */
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  /* Increased height and font sizes by ~50% */
-  height: 240px; /* was 160px */
-  overflow: hidden;
-  font-family: 'Lato', sans-serif;
-  font-size: 52px; /* was 35px */
-  line-height: 60px; /* was 40px */
-  color: #ecf0f1;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 240px;
+    overflow: hidden;
+    font-family: 'Lato', sans-serif;
+    font-size: 52px;
+    line-height: 60px;
+    color: #ecf0f1;
 }
 
 .content__container {
-  font-weight: 600;
-  overflow: hidden;
-  height: 60px; /* match the new line-height */
-  padding: 0 40px;
-  position: relative;
+    font-weight: 600;
+    overflow: hidden;
+    height: 60px;
+    padding: 0 40px;
+    position: relative;
 }
 
 .content__container:before {
-  content: '[';
-  left: 0;
+    content: '[';
+    left: 0;
 }
 
 .content__container:after {
-  content: ']';
-  position: absolute;
-  right: 0;
+    content: ']';
+    position: absolute;
+    right: 0;
 }
 
 .content__container:after,
 .content__container:before {
-  position: absolute;
-  top: 0;
-  color: #16a085;
-  font-size: 62px; /* scaled up as well */
-  line-height: 60px;
-  animation: opacity 2s infinite;
+    position: absolute;
+    top: 0;
+    color: #16a085;
+    font-size: 62px;
+    line-height: 60px;
+    animation: opacity 2s infinite;
 }
 
 .content__container__text {
-  display: inline;
-  float: left;
-  margin: 0;
+    display: inline;
+    float: left;
+    margin: 0;
 }
 
 .content__container__list {
-  margin-top: 0;
-  padding-left: 140px; /* increase to account for bigger bracket text */
-  text-align: left;
-  list-style: none;
-  animation: change 10s infinite;
+    margin-top: 0;
+    padding-left: 140px;
+    text-align: left;
+    list-style: none;
+    animation: change 10s infinite;
 }
 
 .content__container__list__item {
-  line-height: 60px; /* match new line-height */
-  margin: 0;
+    line-height: 60px;
+    margin: 0;
 }
 
 /* Keyframes for opacity effect */
 @keyframes opacity {
-  0%, 100% { opacity: 0; }
-  50% { opacity: 1; }
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
 }
 
 /* Keyframes for changing text */
 @keyframes change {
-  0%, 25%, 100% { transform: translate3d(0, 0, 0); }
-  33.33%, 50% { transform: translate3d(0, -50%, 0); }
+    0%, 25%, 100% { transform: translate3d(0, 0, 0); }
+    33.33%, 50% { transform: translate3d(0, -50%, 0); }
 }
 
-/* INTRO SECTION - Placed below the content */
+/* INTRO SECTION */
 .intro {
-  position: absolute;
-  top: 50%; /* Adjust as needed to sit below the .content area */
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: 'Lato', sans-serif;
-  color: #ecf0f1;
-  text-align: center;
-  max-width: 600px;
-  width: 80%;
-  font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Lato', sans-serif;
+    color: #ecf0f1;
+    text-align: center;
+    max-width: 600px;
+    width: 80%;
+    font-size: 2rem;
 }
 
 .intro p:nth-of-type(2) {
-  font-size: 1.2rem; /* or any size you want */
+    font-size: 1.2rem;
 }
 
+/* Highlighted text */
 .sandor-highlight {
-  color: #16a085;
+    color: #16a085;
 }
 
+/* Cursor effect */
 .cursor {
-  /* make the cursor visible */
-  display: inline-block;
-  width: 3px;          /* narrow width to mimic a text cursor */
-  height: 1em;         /* match the line height of the text */
-  background-color: #16a085; /* same color as your text, or adjust as needed */
-
-  /* animation */
-  animation: blink 1s step-start infinite;
+    display: inline-block;
+    width: 3px;
+    height: 1em;
+    background-color: #16a085;
+    animation: blink 1s step-start infinite;
 }
 
-/* define the blinking effect */
 @keyframes blink {
-  50% {
-    opacity: 0;
-  }
-}
-
-/* Style for Social Icons Container */
-.social-icons {
-  float: right;       /* Positions the icons to the right */
-  display: flex;      /* Ensures the icons line up horizontally */
-  align-items: center;
-}
-
-/* Style for Social Icons Links */
-.social-icons a {
-  color: #f2f2f2;
-  text-decoration: none;
-  padding: 14px 16px; /* Adjusts spacing similar to other nav links */
-  font-size: 17px;    /* Matches the navbar font size */
-}
-
-/* Hover effect for Social Icons */
-.social-icons a:hover {
-  background-color: #ddd;
-  color: black;
-  transition: background-color 0.3s, color 0.3s;
+    50% {
+        opacity: 0;
+    }
 }
