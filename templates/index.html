@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
+    <!-- Link to Fira Code from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
-
 </head>
 <body>
     <!-- Navbar -->
     <div class="topnav">
-        <a href="#Sandor Szabo">Sandor Szabo</a>
-        <a class="active" href="#home">Home</a>
+        <a href="#name">Sandor Szabo</a>
+        <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
-
         <div class="social-icons">
             <a href="mailto:zsombii593@gmail.com" title="Email">
                 <i class="fa-solid fa-envelope"></i>
@@ -28,35 +28,122 @@
                 <i class="fa-brands fa-linkedin"></i>
             </a>
         </div>
-
     </div>
 
-
-    <!-- Animated Text Section -->
-    <div class="content">
-        <div class="content__container">
-            <p class="content__container__text">Hello, </p>
-            <ul class="content__container__list">
-                <li class="content__container__list__item"> world!</li>
-                <li class="content__container__list__item"> friend!</li>
-            </ul>
+    <!-- Home Section -->
+    <section id="home">
+        <div class="content">
+            <div class="content__container">
+                <p class="content__container__text">Hello, </p>
+                <ul class="content__container__list">
+                    <li class="content__container__list__item"> world!</li>
+                    <li class="content__container__list__item"> friend!</li>
+                </ul>
+            </div>
         </div>
 
+        <div class="intro">
+            <p>hi, <span class="green-highlight">Sandor</span> here
+                <span class="cursor"></span>
+            </p>
+
+            <p>I’m an aspiring <span class="green-highlight">software engineer</span>
+                based in <span class="green-highlight">Oxfordshire</span>,
+                <span class="green-highlight">UK</span>,
+                fascinated by large-scale, high-impact products and the
+                endless possibilities technology offers. My curiosity spans
+                everything from AI breakthroughs to user-centric design, and
+                I’m driven to create solutions that make a meaningful
+                difference in the world.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+    <div class="about-container">
+        <!-- Left Side: Text & Technologies -->
+        <div class="section-content">
+            <h2>#about me</h2>
+            <p>
+                I am currently in my third and final year of
+                <span class="green-highlight">Computer Science BSc</span>
+                at <span class="green-highlight">Oxford Brookes University</span>.
+                Alongside my studies, I actively work on personal projects, constantly seeking to improve my programming
+                skills and expand my knowledge. I am passionate about software development and always eager to explore
+                new technologies, refine my coding abilities, and build innovative solutions.
+            </p>
+
+            <h3>Here are some technologies I have experience with:</h3>
+            <ul class="tech-list">
+                <li>Python</li> <li>Java</li>
+                <li>Swift</li> <li>Flask</li>
+                <li>C and C++</li> <li>HTML and CSS</li>
+            </ul>
+
+            <p>Outside of school and work, I like to go to the gym and work on personal programming projects.</p>
+        </div>
+
+        <!-- Right Side: Profile Image -->
+        <div class="profile-container">
+            <img src="{{ url_for('static', filename='images/portfolio_image_sandor.png') }}" alt="My Profile Picture">
+        </div>
     </div>
+    </section>
 
-    <div class="intro">
-        <p><span class="sandor-highlight">Sandor</span> here, Welcome to My Portfolio
-            <span class="cursor"></span>
-        </p>
 
-        <p>I’m an aspiring software engineer based in Oxfordshire, UK,
-            fascinated by large-scale, high-impact products and the
-            endless possibilities technology offers. My curiosity spans
-            everything from AI breakthroughs to user-centric design, and
-            I’m driven to create solutions that make a meaningful
-            difference in the world.</p>
-    </div>
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="section-content">
+            <h2>#experience</h2>
+            <p>Details about my work experience, internships, and relevant projects...</p>
+        </div>
+    </section>
 
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="section-content">
+            <h2>#projects</h2>
+            <p>Some of the exciting projects I have worked on...</p>
+        </div>
+    </section>
+
+
+    <!-- Spacer to allow scrolling -->
+    <div class="spacer"></div>
+
+    <script>
+        // Smooth scrolling for navbar links
+        document.querySelectorAll('.topnav a').forEach(anchor => {
+            anchor.addEventListener('click', function(event) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+
+        // Show sections when scrolling down
+        window.addEventListener('scroll', function() {
+            const aboutSection = document.getElementById('about');
+            const experienceSection = document.getElementById('experience');
+            const projectsSection = document.getElementById('projects');
+            const homeSection = document.getElementById('home');
+
+            if (window.scrollY > homeSection.offsetHeight / 2) {
+                aboutSection.style.display = 'block';
+            }
+            if (window.scrollY > aboutSection.offsetTop + aboutSection.offsetHeight / 2) {
+                experienceSection.style.display = 'block';
+            }
+            if (window.scrollY > experienceSection.offsetTop + experienceSection.offsetHeight / 2) {
+                projectsSection.style.display = 'block';
+            }
+        });
+    </script>
 
 </body>
 </html>

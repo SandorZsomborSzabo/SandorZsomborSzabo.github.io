@@ -1,6 +1,9 @@
+/* Import Fira Code (free alternative to MonoLisa) */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
+
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Fira Code', monospace; /* Apply Fira Code to all text */
     text-align: center;
     background-color: #333;
     margin: 0;
@@ -19,6 +22,10 @@ h1 {
     display: flex;
     align-items: center;
     padding: 10px 20px; /* Adds padding to navbar */
+    position: fixed; /* Fix navbar to the top */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Keeps navbar on top */
 }
 
 /* Navbar Links */
@@ -47,8 +54,10 @@ h1 {
     margin-left: auto; /* Pushes icons to the right */
     display: flex;
     align-items: center;
+    transform: translateX(-20px); /* Moves all icons 20px to the left */
 }
 
+/* Social Icons Hover Effect */
 .social-icons a {
     color: #f2f2f2;
     text-decoration: none;
@@ -56,13 +65,12 @@ h1 {
     margin-left: 15px; /* Space between icons */
 }
 
-/* Social Icons Hover Effect */
 .social-icons a:hover {
-    background-color: transparent; /* Remove background highlight */
-    color: #04AA6D; /* Change icon color on hover */
+    background-color: transparent;
+    color: #04AA6D;
 }
 
-/* ANIMATED TEXT SECTION */
+/* ANIMATED TEXT SECTION (Keep using Lato for animation) */
 .content {
     position: absolute;
     top: 40%;
@@ -70,7 +78,7 @@ h1 {
     transform: translate(-50%, -50%);
     height: 240px;
     overflow: hidden;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Lato', sans-serif; /* Ensure only the animation uses Lato */
     font-size: 52px;
     line-height: 60px;
     color: #ecf0f1;
@@ -139,10 +147,10 @@ h1 {
 /* INTRO SECTION */
 .intro {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-family: 'Lato', sans-serif;
+    font-family: 'Fira Code', monospace; /* Apply Fira Code here */
     color: #ecf0f1;
     text-align: center;
     max-width: 600px;
@@ -155,7 +163,7 @@ h1 {
 }
 
 /* Highlighted text */
-.sandor-highlight {
+.green-highlight {
     color: #16a085;
 }
 
@@ -172,4 +180,106 @@ h1 {
     50% {
         opacity: 0;
     }
+}
+
+/* About, Experience, and Projects Sections */
+#about,
+#experience,
+#projects {
+    display: none;
+    padding: 50px;
+    background-color: #333;
+    color: #fff;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* About Section - Ensure Flex Layout */
+#about {
+    display: flex;
+    justify-content: center; /* Centers both elements */
+    align-items: center;
+    padding: 50px;
+}
+
+/* Container for both text and image */
+.about-container {
+    display: flex;
+    justify-content: space-between; /* Ensures equal spacing on both sides */
+    align-items: center;
+    max-width: 80vw; /* Expands to ensure proper spacing */
+    width: 100%;
+    gap: 50px; /* Space between text and image */
+}
+
+/* Left Side: Text & Technologies */
+.section-content {
+    max-width: 40%; /* Adjusts text width to align properly */
+    margin-left: 10%; /* Ensures equal spacing from the left */
+    word-wrap: break-word;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+/* Titles - Shift to the left */
+#about h2,
+#experience h2,
+#projects h2 {
+    text-align: left;
+    font-size: 2.5rem;
+}
+
+/* Technologies List */
+.tech-list {
+    list-style-type: "▸"; /* Custom bullet point */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 10px 30px; /* Spacing between items */
+    padding: 0;
+    max-width: 60%;
+    margin: 20px 0 0 10%;
+}
+
+.tech-list li {
+    list-style-position: inside; /* Keeps bullets aligned */
+    text-align: left;
+    color: #16a085;
+    font-size: 1rem;
+}
+
+/* Right Side: Profile Image */
+.profile-container {
+    display: flex;
+    justify-content: flex-end; /* Moves image further to the right */
+    align-items: center;
+    margin-right: 10%; /* Ensures equal spacing on the right */
+    margin-top: 7%;
+}
+
+/* Profile Image Styling */
+.profile-container img {
+    width: 400px;
+    height: 400px;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Fix scrolling: Allow sections to stack properly */
+section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 20px;
+}
+
+/* Spacer to force scrolling */
+.spacer {
+    height: 200vh;
+}
+
+/* Enable smooth scrolling */
+html {
+    scroll-behavior: smooth;
 }
