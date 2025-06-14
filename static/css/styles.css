@@ -283,3 +283,88 @@ section {
 html {
     scroll-behavior: smooth;
 }
+
+/* Projects Section */
+#projects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 20px;
+}
+
+/* Projects Grid Layout */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(300px, 1fr));
+    gap: 30px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto 0;
+}
+
+/* Individual Project Cards */
+.project-card {
+    background-color: #444;
+    color: #ecf0f1;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    cursor: pointer;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card h3 {
+    margin: 0 0 15px 0;
+    color: #16a085;
+    font-size: 1.3rem;
+}
+
+.project-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+/* Technologies list styling */
+.project-tech-list {
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid #555;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-left: 0;
+    list-style: none;
+}
+
+.project-tech-list li {
+    background-color: #16a085;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+/* Hover Effect */
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Section title alignment */
+#projects h2 {
+    align-self: flex-start;
+    margin-left: 5%;
+}
+
+#projects > .section-content > p {
+    align-self: flex-start;
+    margin-left: 5%;
+    margin-bottom: 30px;
+}
+
